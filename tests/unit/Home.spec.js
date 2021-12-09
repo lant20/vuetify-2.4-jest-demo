@@ -23,14 +23,14 @@ describe("Home.vue", () => {
     expect(wrapper.vm).toBeTruthy();
   });
 
-  it("Checks the title, () => {
+  it("Checks the title", () => {
     // console.log(wrapper.html());
     // console.log(wrapper.vm.$t);
     // console.log(wrapper.vm.$i18n.messages);
     // console.log(wrapper.vm.$t("title"));
     expect(wrapper.find('[data-test="hometitle"]').text()).toMatch(
       "Weather App"
-      );
+    );
     expect(wrapper.vm.title).toMatch("Weather App");
   });
 
