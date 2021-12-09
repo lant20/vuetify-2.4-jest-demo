@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col cols="12">
-        <h2>{{ title }}</h2>
+        <h2 data-test="hometitle">{{ title }}</h2>
       </v-col>
     </v-row>
     <v-row>
@@ -32,10 +32,14 @@ export default {
     ZipCodeInput,
   },
   data: () => ({
-    title: "Weather App",
     fahrenheitTemperature: null,
     city: "",
   }),
+  computed: {
+    title() {
+      return this.$t("title");
+    },
+  },
   methods: {
     processZipCode(code) {
       var data = model.fetchResponse(window.fetch, code);
